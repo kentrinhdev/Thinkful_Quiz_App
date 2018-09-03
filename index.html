@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quiz | Director Deduction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=11">
+  <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/grid.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+  <div class="container" id="main-app">
+    <!-- -------------------------------------------------------------------- row one -------------------------------------------------------------------- -->
+    <div class="row">
+      <div class="twelve columns">
+        <nav role="navigation">
+          <div class="left-block">
+            <header role="banner"><h1 class="nav-title" id="nav-title">Director Deduction | Quiz</h1></header>
+          </div>
+
+          <div class="right-block">
+            <span><a href="#">Sign Up</a> | <a href="#">Log In</a></span>
+          </div>
+        </nav>
+      </div><!-- col-12 -->
+    </div><!-- row -->
+
+    <!-- -------------------------------------------------------------------- row two -------------------------------------------------------------------- -->
+    <div class="twelve columns">
+      <div class="subnav-wrap">
+        <span class="subnav-title">Good luck</span><span class="nav-player-name" id="nav-player-name"></span><span>!</span>
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------- row th3 -------------------------------------------------------------------- -->
+    <div class="row">
+      <div class="twelve columns">
+        <main role="main">
+          <div class="question-box" id="question-box">
+            <span class="question-score">Score: <span id="question-score">0</span> %</span><br>
+            <span class="question-label">Question <span id="question-number">0</span> of 10</span>
+            <p id="question-slot">Who directed True Romance?</p>
+          </div>
+        </main>
+      </div><!-- col-12 -->
+    </div><!-- row -->
+
+    <!-- -------------------------------------------------------------------- row four ------------------------------------------------------------------- -->
+    <div class="row">
+      <div class="twelve columns">
+        <section class="container-question" role="region">
+          <div class="question-options">
+            <form class="form-radio" id="answer-form">
+              <label for="option-1" class="radio-box"><span id="lbl-option-1">Director One</span>
+                <input type="radio" name="radio"  id="option-1" value="Director One" data-required required="required">
+                <span class="checkmark"></span>
+              </label>
+              <label for="option-2" class="radio-box"><span id="lbl-option-2">Director Two</span>
+                <input type="radio" name="radio" id="option-2" value="Director Two" data-required required="required">
+                <span class="checkmark"></span>
+              </label>
+              <label for="option-3" class="radio-box"><span id="lbl-option-3">Director Three</span>
+                <input type="radio" name="radio" id="option-3" value="Director Three" data-required required="required">
+                <span class="checkmark"></span>
+              </label>
+              <label for="option-4" class="radio-box"><span id="lbl-option-4">Director Four</span>
+                <input type="radio" name="radio" id="option-4" value="Director Four" data-required required="required">
+                <span class="checkmark"></span>
+              </label>
+
+              <div class="container-button">
+                <span id="lbl-final-answer">final answer?</span><input class="button-submit-yes" id="btn-submit-yes" type="submit" value="YES" onsubmit="renderQuizPage();return false">
+                <span id="lbl-keep-going">keep going ></span><input class="button-submit-next" id="btn-submit-next" type="submit" value="NEXT" onsubmit="renderQuizPage();return false">
+              </div>
+            </form>
+          </div>
+          <div class="clear-fix"></div>
+        </section>
+      </div><!-- col-12 -->
+    </div><!-- row -->
+
+    <!-- -------------------------------------------------------------------- row five ------------------------------------------------------------------- -->
+    <div class="row">
+      <div class="twelve columns">
+        <main role="main">
+          <div class="feedback-box" id="feedback-section">
+            <span class="answer-correct" id="lbl-feedback-correct">Correct Answer</span>
+            <span class="answer-wrong" id="lbl-feedback-wrong">Incorrect Answer</span>
+            <p id="feedback-trivia">
+              It's an unfortunate fact that most everyone, at some point, will have a bad relationship. The film Eternal Sunshine of The Spotless Mind poses the question: What if you could have the memory of this bad relationship erased? Would you do it? If so, what kind of impact would erasing memories have on you? Smart, funny, and engaging, this latest outing by enigmatic Screenwriter Charlie Kaufman and accomplished Music Video Director Michel Gondry is an absolute treat. Eternal Sunshine of The Spotless Mind is one of those rare films that, after watching it, you'll want to run back and watch it again and again.
+            </p>
+          </div>
+        </main>
+      </div><!-- col-12 -->
+    </div><!-- row -->
+  </div><!-- container -->
+
+  <div class="container-intro" id="intro-page">
+  <!-- -------------------------------------------------------------------- intro -------------------------------------------------------------------- -->
+    <div class="twelve columns">
+      <div id="modal">
+        <div class="modal-box">
+          <form class="welcome-form" id="welcome-form" onsubmit="handleWelcomeGoSubmit();return false">
+            <h2>Hey!</h2>
+            <h3>Welcome to <span>Director Deduction</span>.</h3>
+            <p>
+              Since you're here, you must <em>love</em> films. We love films. We love directors. So you must too!
+              Let's put that love of films and film directors to the test!
+            </p>
+            
+            <label for="hello-name" class="modal-name">Please enter your name: <br>
+              <input class="modal-input" id="hello-name" type="text" placeholder="John or Jane" name="name" data-required required="required">
+            </label>
+
+            <p>Then click GO to start the quiz.</p>
+
+            <div class="container-go">
+              <!-- <button class="button-submit" id="button">GO</button> -->
+              <input type="submit" class="button-submit" id="btn-go" value="GO">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-intro" id="end-page">
+  <!-- -------------------------------------------------------------------- end -------------------------------------------------------------------- -->
+    <div class="twelve columns">
+      <div id="modal-end">
+        <div class="modal-box">
+          <form class="welcome-form" id="end-form" onsubmit="handleEndGoSubmit();return false">
+            <h2>Hey!</h2>
+            <h3>You finished the <span>Director Deduction</span> quiz.</h3>
+            <p id="end-message">
+              You're so Hollywood! As a reward, review a full report below, then click GO to take the quiz again!
+            </p>
+
+            <p id="end-result"></p>
+
+            <div class="container-go">
+              <!-- <button class="button-submit" id="button">GO</button> -->
+              <input type="submit" class="button-submit" id="btn-go" value="GO">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="/js/store.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

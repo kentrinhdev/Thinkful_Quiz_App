@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+:root {
+  --font-family: 'Lato', sans-serif;
+}
+/*font-family: var(--font-family); */
+
+/* GLOBAL ELEMENTS */
+html,
+body {
+  font-family: 'Lato';
+  color: steelblue;
+}
+a:link {
+  text-decoration: none;
+}
+
+/* MAIN STYLING */
+.container-intro {
+  width: 100vw;
+  height: 100vh;
+  background: url(/img/bg.jpg);
+  background-size: cover;
+}
+
+nav {
+  width: 100%;
+  color: steelblue;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+nav span {
+  font-size: 1.1rem;
+  color: lightseagreen;
+  margin-left: 0.4rem;
+}
+
+.nav-title {
+  font-size: 3.5rem;
+}
+
+.left-block {
+  width: 60%;
+  height: 8.5vh;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.right-block {
+  width: 39%;
+  text-align: right;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.right-block a:hover {
+  color: #4CAF50; /* Green */;
+}
+
+.subnav-wrap {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav-player-name {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #4CAF50; /* Green */
+}
+
+.question-box {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-bottom: 3rem;
+  background-color: lightblue;
+  font-size: 2rem;
+  color: white;
+  border-radius: 5px 30px;
+}
+
+.question-box p {
+  margin-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.question-score {
+  font-size: 1.2rem;
+  color: lightseagreen;
+}
+
+.question-label {
+  font-size: 1.5rem;
+  color: steelblue;
+}
+
+.question-options {
+  margin-top: -2.4rem;
+}
+
+/* MULTIPLE CHOICE OPTIONS */
+.radio-box {
+  padding-left: 35px;
+  margin-bottom: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: block;
+  position: relative;
+}
+
+/* Hide the browser's default radio button */
+.radio-box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26px;
+  width: 26px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.radio-box:hover {
+  color: #4CAF50; /* Green */
+}
+
+/* On mouse-over, add a grey background color */
+.radio-box:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-box input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-box .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.container-button {
+  text-align: right;
+}
+
+.container-button span {
+  font-size: 1.5rem;
+  color: lightseagreen;
+}
+
+.button-submit, .button-submit-yes {
+  margin-left: 1.2rem;
+  margin-right: 0px;
+  background-color: #4CAF50; /* Green */
+  padding: 10px 10px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px 10px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button-submit-next {
+  margin-left: 1.2rem;
+  margin-right: 0px;
+  background-color: lightseagreen;
+  padding: 10px 10px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px 10px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.container-go > .button-submit {
+  padding: 15px 40px;
+}
+
+.button-submit:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.feedback-box {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: -3rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  border-radius: 5px 30px;
+}
+
+.feedback-box p {
+  padding-top: 0.3rem;
+  margin: 0px 1.5rem 0px 0px;
+}
+
+.answer-correct {
+  font-size: 1.3rem;
+  color: #4CAF50; /* Green */
+}
+
+.answer-wrong {
+  font-size: 1.3rem;
+  color: red;
+}
+
+.welcome-form {
+  /*height: 100%;*/
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome-form h2 {
+  font-size: 3.5rem;
+  color: lightseagreen;
+}
+
+.welcome-form h3 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.welcome-form p {
+  line-height: 1.6em;
+}
+
+.modal-name {
+  color: lightseagreen;
+}
+
+.welcome-form span {
+  color: #4CAF50; /* Green */
+}
+
+#modal, #modal-end {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Lato';
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  position: fixed;
+}
+
+.modal-box {
+  width: 300px;
+  height: 445px;
+  padding-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4vh;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.modal-input {
+  width: 250px;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 1px solid lightseagreen;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: lightseagreen;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: lightgrey;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: lightgrey;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: lightgrey;
+}
+
+.container-go {
+  text-align: center;
+}
+
+/* SMALLER SCREENS */
+@media only screen and (max-width: 45em) {  /* 768px */
+  nav {
+    display: none;
+  }
+}
